@@ -76,3 +76,5 @@ def get_string(string):
     emotion_list.append(blob.classify())
   return emotion_list
 
+print(get_string(user_string))
+
