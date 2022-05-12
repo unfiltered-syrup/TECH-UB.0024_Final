@@ -63,7 +63,7 @@ import nltk
 import pandas as pd
 #  link to emotions_short.csv: https://drive.google.com/file/d/1Is6VaVft6BuL438byJQbePDA_Ys19v5W/view?usp=sharing
 
-import urllib2
+
 from textblob.classifiers import NaiveBayesClassifier
 with open('/content/TECH-UB.0024_Final/TECH-Final-Frontend/emotion_complete.csv',) as fp:
   cl = NaiveBayesClassifier(fp, format="csv")
