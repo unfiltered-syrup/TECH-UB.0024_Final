@@ -8,7 +8,7 @@
     src: url("jehoo-creative-laviossa-medium.otf") format("opentype");
   }
   html {
-  background: url(/static/background.jpg) no-repeat center center fixed;
+  background: url(background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -143,10 +143,10 @@ h1{
 <button id="login">Login</button>
 <div class="container">
   <div class="flip-card-inner">
-    <div id = 'side-1' class='flip' style="background-image: url('/static/cardbacks/card2.png');">
+    <div id = 'side-1' class='flip' style="background-image: url('cardbacks/card2.png');">
         <br><br>
         <h1>Vent to me!</h1>
-        <form id="f" action="string_process.php" method="POST">
+      <form id="f">
         <div id="text_box"></div>
         <textarea  id="text_input" type="text" placeholder="Enter your text"></textarea>
       </form>
@@ -154,6 +154,7 @@ h1{
     </div>
     <div class="flip" id='side-2'>
       <img src="cardbacks/card1.png" alt="Avatar" style="width:231px;height:352px;">
+      <p id="playlist"></p>
     </div>
   </div>
 </div>
@@ -162,18 +163,33 @@ h1{
   var card = document.querySelector('.container');
   var login_button = document.getElementById('login');
   function flipping(){
+    userInput = document.getElementById('text_input').value;
     event.preventDefault();
     document.getElementById( 'side-2' ).className = 'flip flip-side-1';
     document.getElementById( 'side-1' ).className = 'flip flip-side-2';
     setTimeout(function(){
-    card.classList.add("slidein");
+      card.classList.add("slidein");
     },5000);
+    setTimeout(function(){
+      get_playlist(userInput)
+    },2000);
   }
   function user_login(){
     window.location.replace('login_page.php');
   }
   login_button.addEventListener("click",user_login);
 
+  function get_playlist(user_input){
+    $.ajax({
+      type: "POST",
+      url: 'main.py',
+      data: {
+        input: user_input
+      }
+    }).done(function(result)){
+      document.getElementById('playlist').innerHTML = result;
+    }
+  }
 </script>
 </body>
 </html>
