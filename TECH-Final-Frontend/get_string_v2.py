@@ -60,6 +60,7 @@ from textblob import TextBlob
 from textblob.classifiers import NaiveBayesClassifier
 
 import nltk
+nltk.download('punkt')
 import pandas as pd
 #  link to emotions_short.csv: https://drive.google.com/file/d/1Is6VaVft6BuL438byJQbePDA_Ys19v5W/view?usp=sharing
 
