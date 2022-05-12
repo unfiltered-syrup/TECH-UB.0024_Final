@@ -175,19 +175,23 @@ h1{
     window.location.replace('login_page.php');
   }
   login_button.addEventListener("click",user_login);
-/*
+
   function get_playlist(user_input){
     $.ajax({
-      type: "POST",
-      url: 'main.py',
-      data: {
-        input: user_input
+        url: 'main.py',
+        type: 'POST',
+        data: {
+            input: userInput,
+        },
+          success: function(result){
+            console.log(result);
+          },
+          error: function(result){
+            console.log('error');
+          }
+        });
       }
-    }).done(function(result)){
-      document.getElementById('playlist').innerHTML = result;
-    }
-  }
-*/
+
 </script>
 </body>
 </html>
