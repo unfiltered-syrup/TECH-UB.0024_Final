@@ -13,6 +13,12 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 import re
 import string
+from textblob import TextBlob
+from textblob.classifiers import NaiveBayesClassifier
+
+import nltk
+nltk.download('punkt')
+import pandas as pd
 alphabets= "([A-Za-z])"
 prefixes = "(Mr|St|Mrs|Ms|Dr)[.]"
 suffixes = "(Inc|Ltd|Jr|Sr|Co)"
@@ -25,7 +31,13 @@ def check_punctuation(text):
     return text
   else:
     return text+'.'
-
+def get_string(string):
+  emotion_list=[]
+  sents=split_into_sentences(string)
+  for sent in sents:
+    blob=TextBlob(sent,classifier=cl)
+    emotion_list.append(blob.classify())
+  return emotion_list
 def split_into_sentences(text):
     text = check_punctuation(text) 
     print(text)
@@ -56,12 +68,7 @@ def split_into_sentences(text):
 
 user_string=input("How do you feel?")
 
-from textblob import TextBlob
-from textblob.classifiers import NaiveBayesClassifier
 
-import nltk
-nltk.download('punkt')
-import pandas as pd
 #  link to emotions_short.csv: https://drive.google.com/file/d/1Is6VaVft6BuL438byJQbePDA_Ys19v5W/view?usp=sharing
 
 
@@ -69,13 +76,7 @@ from textblob.classifiers import NaiveBayesClassifier
 with open('/content/TECH-UB.0024_Final/TECH-Final-Frontend/emotion_complete.csv', encoding = "ISO-8859-1") as fp:
   cl = NaiveBayesClassifier(fp, format="csv")
 
-def get_string(string):
-  emotion_list=[]
-  sents=split_into_sentences(string)
-  for sent in sents:
-    blob=TextBlob(sent,classifier=cl)
-    emotion_list.append(blob.classify())
-  return emotion_list
+
 
 print(get_string(user_string))
 
