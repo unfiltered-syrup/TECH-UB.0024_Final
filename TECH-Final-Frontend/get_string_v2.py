@@ -65,7 +65,7 @@ import pandas as pd
 
 
 from textblob.classifiers import NaiveBayesClassifier
-with open('/content/TECH-UB.0024_Final/TECH-Final-Frontend/emotion_complete.csv',) as fp:
+with open('/content/TECH-UB.0024_Final/TECH-Final-Frontend/emotion_complete.csv', encoding = "ISO-8859-1") as fp:
   cl = NaiveBayesClassifier(fp, format="csv")
 
 def get_string(string):
