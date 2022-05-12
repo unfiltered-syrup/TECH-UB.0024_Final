@@ -25,6 +25,10 @@ suffixes = "(Inc|Ltd|Jr|Sr|Co)"
 starters = "(Mr|Mrs|Ms|Dr|He\s|She\s|It\s|They\s|Their\s|Our\s|We\s|But\s|However\s|That\s|This\s|Wherever)"
 acronyms = "([A-Z][.][A-Z][.](?:[A-Z][.])?)"
 websites = "[.](com|net|org|io|gov)"
+
+
+user_string=input("How do you feel?")
+
 def check_punctuation(text):
   if text[len(text)-1] in string.punctuation:
     print('yes')
@@ -65,10 +69,6 @@ def split_into_sentences(text):
     sentences = sentences[:-1]
     sentences = [s.strip() for s in sentences]
     return sentences
-
-user_string=input("How do you feel?")
-
-
 #  link to emotions_short.csv: https://drive.google.com/file/d/1Is6VaVft6BuL438byJQbePDA_Ys19v5W/view?usp=sharing
 
 
@@ -79,4 +79,3 @@ with open('/content/TECH-UB.0024_Final/TECH-Final-Frontend/emotion_complete.csv'
 
 
 print(get_string(user_string))
-
