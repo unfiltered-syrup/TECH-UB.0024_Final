@@ -177,18 +177,15 @@ h1{
   login_button.addEventListener("click",user_login);
 
   function get_playlist(user_input){
-    $.ajax({
-        url: 'main.py',
-        type: 'POST',
-        data: {
-            input: userInput,
-        },
-          success: function(result){
-            console.log(result);
-          },
-          error: function(result){
-            console.log('error');
-          }
+    $(function() {
+          $('#side-2').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
         });
       }
 
