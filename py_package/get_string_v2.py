@@ -10,7 +10,7 @@ import re
 import string
 import spacy
 
-class get_string:
+class get_string_v2:
 	def __init__(input):
 	 userInput = input
 def check_punctuation(text):
