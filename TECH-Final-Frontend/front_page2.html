@@ -12,7 +12,7 @@
       }
         body{
           font-family: 'Laviossa', sans-serif;
-          margin-top: 10%;
+          margin-top: 3%;
           background-repeat: no-repeat;
           background-attachment: fixed;
           height: 100%;
@@ -22,9 +22,18 @@
           text-align : center;
           color: white;
       }
-      #display{
-          border-style: dotted;
+      @keyframes wiggle {
+        0% { transform: rotate(0deg); }
+       80% { transform: rotate(0deg); }
+       85% { transform: rotate(5deg); }
+       95% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
       }
+
+       h1.wiggle {
+        display: inline-block;
+        animation: wiggle 2.5s infinite;
+       }
       h1{
           text-align: center;
           color: white;
@@ -32,7 +41,7 @@
     </style>
 </head>
 <body>
-    <div id="display"><h1>The universe has returned you this playlist:</h1></div>
+    <div id="display"><h1 class="wiggle">The universe has returned you this playlist:</h1></div>
 
 <script>
     const passed_param = {{ param1 | safe }};
