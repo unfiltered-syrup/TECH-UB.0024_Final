@@ -146,7 +146,7 @@ h1{
       <form id="f" action="/get_strings">
         <div id="text_box"></div>
         <textarea  id="text_input" type="text" placeholder="Enter your text"></textarea>
-      <button id="submit">Hand Over the Card</button>
+      <button id="submit" onclick="flipping()">Hand Over the Card</button>
       </form>
     </div>
     <div class="flip" id='side-2'>
@@ -163,13 +163,10 @@ h1{
   var login_button = document.getElementById('login');
   function flipping(){
     userInput = document.getElementById('text_input').value;
-    
-    event.preventDefault();
     document.getElementById( 'side-2' ).className = 'flip flip-side-1';
     document.getElementById( 'side-1' ).className = 'flip flip-side-2';
     setTimeout(function(){
       card.classList.add("slidein");
-      get_playlist(userInput);
     },2000);
   }
   function user_login(){
