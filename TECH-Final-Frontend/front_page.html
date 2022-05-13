@@ -18,6 +18,11 @@
     background-attachment: fixed;
     height: 100%;
 }
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
 h1{
   font-family: laviossa;
   font-size: 30px;
@@ -168,6 +173,7 @@ h1{
     document.getElementById( 'side-1' ).className = 'flip flip-side-2';
     setTimeout(function(){
       card.classList.add("slidein");
+      card.classList.add("hidden");
     },2000);
   }
   function user_login(){
