@@ -163,15 +163,16 @@ h1{
   var login_button = document.getElementById('login');
   function flipping(){
     userInput = document.getElementById('text_input').value;
-
+    
     event.preventDefault();
     document.getElementById( 'side-2' ).className = 'flip flip-side-1';
     document.getElementById( 'side-1' ).className = 'flip flip-side-2';
     setTimeout(function(){
       card.classList.add("slidein");
+      get_playlist(userInput)
     },5000);
     setTimeout(function(){
-      get_playlist(userInput)
+      print_playlist();
     },2000);
   }
   function user_login(){
@@ -183,7 +184,7 @@ h1{
     $(function() {
           $('#side-2').on('click', function(e) {
             e.preventDefault()
-            $.getJSON('/',
+            $.getJSON('/get_string',
                 function(data) {
               //do nothing
             });
@@ -191,6 +192,16 @@ h1{
           });
         });
       }
+  function print_playlist(){
+    $(function() {
+      $.getJSON('/',
+        function(data) {
+              //do nothing
+            });
+            return false;
+          });
+      });
+  }
 
 </script>
 </body>
