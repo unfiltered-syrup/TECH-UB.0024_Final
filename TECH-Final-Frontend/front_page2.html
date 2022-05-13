@@ -31,12 +31,13 @@
 
 <script>
     var passed_param = '{{ param1 }}';
+    var passed_param2 = JSON.parse(passed_param);
     console.log(typeof passed_param);
     for (let i=0;i<passed_param.length;i++){
         console.log(i);
         let temp = document.createElement('div');
         temp.classList.add('blocks');
-        temp.innerHTML = passed_param[i];
+        temp.innerHTML = passed_param2[i];
         document.body.appendChild(temp);
     }
 </script>
