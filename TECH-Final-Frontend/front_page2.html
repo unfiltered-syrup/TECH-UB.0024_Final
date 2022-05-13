@@ -31,7 +31,7 @@
 
 <script>
     var passed_param = '{{ param1 }}';
-    for (i in passed_param){
+    for (let i=0;i<passed_param.length;i++){
         let temp = documemnt.createElement('div');
         temp.classList.append('blocks');
         temp.innerHTML = i;
