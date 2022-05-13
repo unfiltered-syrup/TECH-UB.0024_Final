@@ -157,6 +157,8 @@ h1{
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
+  var passed_param = '{{ param1 }}';
+  document.getElementById('login').innerHTML = passed_param
   var card = document.querySelector('.container');
   var login_button = document.getElementById('login');
   function flipping(){
