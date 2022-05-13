@@ -143,9 +143,9 @@ h1{
     <div id = 'side-1' class='flip' style="background-image: url('https://raw.githubusercontent.com/unfiltered-syrup/TECH-UB.0024_Final/51b635e005a67380393c1041dac53174ba3223b4/TECH-Final-Frontend/cardbacks/card1.png');">
         <br><br>
         <h1>Vent to me!</h1>
-      <form id="f" action="/get_strings">
+      <form id="f" action="/get_strings" method="post" autocomplete="off">
         <div id="text_box"></div>
-        <textarea  id="text_input" type="text" placeholder="Enter your text"></textarea>
+        <textarea name="text_input" id="text_input" type="text" placeholder="Enter your text"></textarea>
       <button id="submit" onclick="flipping()">Hand Over the Card</button>
       </form>
     </div>
