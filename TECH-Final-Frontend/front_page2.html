@@ -33,9 +33,9 @@
     var passed_param = '{{ param1 }}';
     for (let i=0;i<passed_param.length;i++){
         console.log(i);
-        let temp = documemnt.createElement('div');
+        let temp = document.createElement('div');
         temp.classList.append('blocks');
-        temp.innerHTML = i;
+        temp.innerHTML = passed_param[i];
         document.getElementById('display').appendChild('temp');
     }
 </script>
