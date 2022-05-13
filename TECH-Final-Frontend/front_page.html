@@ -183,7 +183,7 @@ h1{
   function get_playlist(user_input){
     $(function() {
           $('#side-2').on('click', function(e) {
-            e.preventDefault()
+            e.preventDefault();
             $.getJSON('/get_strings',
                 function(data) {
               //do nothing
@@ -194,12 +194,15 @@ h1{
       }
   function print_playlist(){
     $(function() {
-      $.getJSON('/return_result',
-        function(data) {
+      $('#submit').on('click', function(e){
+        e.preventDefault();
+        $.getJSON('/return_result',
+          function(data) {
               //do nothing
             });
             return false;
           });
+    });
   }
 
 </script>
