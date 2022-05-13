@@ -143,11 +143,11 @@ h1{
     <div id = 'side-1' class='flip' style="background-image: url('https://raw.githubusercontent.com/unfiltered-syrup/TECH-UB.0024_Final/51b635e005a67380393c1041dac53174ba3223b4/TECH-Final-Frontend/cardbacks/card1.png');">
         <br><br>
         <h1>Vent to me!</h1>
-      <form id="f">
+      <form id="f" action="/get_strings">
         <div id="text_box"></div>
         <textarea  id="text_input" type="text" placeholder="Enter your text"></textarea>
-      </form>
       <button id="submit" onclick="flipping()">Hand Over the Card</button>
+      </form>
     </div>
     <div class="flip" id='side-2'>
       <img src="https://raw.githubusercontent.com/unfiltered-syrup/TECH-UB.0024_Final/51b635e005a67380393c1041dac53174ba3223b4/TECH-Final-Frontend/cardbacks/card2.png" alt="Avatar" style="width:231px;height:352px;">
@@ -170,9 +170,6 @@ h1{
     setTimeout(function(){
       card.classList.add("slidein");
       get_playlist(userInput);
-    },5000);
-    setTimeout(function(){
-      print_playlist();
     },2000);
   }
   function user_login(){
