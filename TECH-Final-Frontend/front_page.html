@@ -184,7 +184,7 @@ h1{
     $(function() {
           $('#side-2').on('click', function(e) {
             e.preventDefault()
-            $.getJSON('/get_string',
+            $.getJSON('/get_strings',
                 function(data) {
               //do nothing
             });
@@ -194,7 +194,7 @@ h1{
       }
   function print_playlist(){
     $(function() {
-      $.getJSON('/',
+      $.getJSON('/return_result',
         function(data) {
               //do nothing
             });
